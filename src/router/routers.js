@@ -10,7 +10,7 @@ import Main from '@/components/Layout/index.vue'
  *  hideInBread: (false) 设为true后此级路由将不会出现在面包屑中，示例看QQ群路由配置
  *  hideInMenu: (false) 设为true后在左侧菜单不会显示该页面选项
  *  notCache: (false) 设为true后页面在切换标签后不会缓存，如果需要缓存，无需设置这个字段，而且需要设置页面组件name属性和路由配置的name一致
- *  access: (null) 可访问该页面的权限数组，当前路由设置的权限会影响子路由
+ *  access: (null) 可访问该页面的权限数组，当前路由设置的权限会影响子路由，没有该字段默认显示
  *  icon: (-) 该页面在左侧菜单、面包屑和标签导航处显示的图标，如果是自定义图标，需要在图标名称前加下划线'_'
  * }
  */
@@ -45,6 +45,38 @@ export default [
           icon: 'md-home'
         },
         component: () => import('@/views/single-page/Home.vue')
+      }
+    ]
+  },
+  {
+    path: '/test',
+    name: '_test',
+    component: Main,
+    meta: {
+      notCache: true,
+      title: '测试',
+      icon: 'md-home'
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        meta: {
+          title: '测试页面1',
+          notCache: false,
+          icon: 'md-home'
+        },
+        component: () => import('@/views/single-page/Test.vue')
+      },
+      {
+        path: '/page2',
+        name: 'page2',
+        meta: {
+          title: '测试页面2',
+          notCache: false,
+          icon: 'md-home'
+        },
+        component: () => import('@/views/single-page/Template.vue')
       }
     ]
   },

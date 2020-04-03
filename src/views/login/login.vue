@@ -4,7 +4,6 @@
       <Card icon="log-in" title="欢迎登录" :bordered="false">
         <div class="form-con">
           <login-form @on-success-valid="handleSubmit"></login-form>
-          <p class="login-tip">输入任意用户名和密码即可</p>
         </div>
       </Card>
     </div>
@@ -46,7 +45,7 @@ export default {
     position: relative;
     &-con{
         position: absolute;
-        right: 160px;
+        right: 14%;
         top: 50%;
         transform: translateY(-60%);
         width: 300px;
