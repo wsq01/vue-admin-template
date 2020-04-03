@@ -11,7 +11,7 @@ export default {
     userId: '',
     avatarImgPath: 'https://file.iviewui.com/dist/a0e88e83800f138b94d2414621bd9704.png',
     token: getToken(),
-    access: '',
+    access: ['super_admin', 'admin'],
     hasGetInfo: false
   },
   mutations: {
