@@ -47,4 +47,9 @@ export default {
     }
   }
 }
+@media all and (max-width: 576px) {
+  .custom-content-con {
+    display: none;
+  }
+}
 </style>
